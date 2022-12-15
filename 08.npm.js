@@ -15,3 +15,13 @@
 // manual approach (create package.json in the root, create properties etc)
 // npm init (step by step, press enter to skip)
 // npm init -y (everything default)
+
+// in order to use a module in nodejs, we need to import it
+const _ = require("lodash");
+
+const items = [1, [2, [3, [4]]]];
+
+// flattenDeep will flatten the array to one level with lodash
+const newItems = _.flattenDeep(items);
+
+console.log(newItems);
