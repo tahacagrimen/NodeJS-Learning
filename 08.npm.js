@@ -25,3 +25,14 @@ const items = [1, [2, [3, [4]]]];
 const newItems = _.flattenDeep(items);
 
 console.log(newItems);
+
+// when we clone a project from github, we need to install all the dependencies
+// npm install
+
+// in order to update a package, we need to use npm update
+
+// npm i -D means install as a dev dependency
+// dev dependencies are not required for the project to run
+// dev dependencies are required for the project to build or test
+
+// npm uninstall <packageName> - uninstall a package
