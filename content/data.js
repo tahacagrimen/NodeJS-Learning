@@ -39,11 +39,11 @@ const products = [
 const people = [
   { id: 1, name: "Taha", age: 27 },
   { id: 2, name: "Deniz", age: 27 },
-  { id: 3, name: "Taha", age: 27 },
-  { id: 4, name: "Deniz", age: 27 },
-  { id: 5, name: "Taha", age: 27 },
-  { id: 6, name: "Deniz", age: 27 },
-  { id: 7, name: "Taha", age: 27 },
+  { id: 3, name: "Ali", age: 23 },
+  { id: 4, name: "Ahmet", age: 21 },
+  { id: 5, name: "Naz", age: 24 },
+  { id: 6, name: "Ayşe", age: 17 },
+  { id: 7, name: "Kübra", age: 37 },
 ];
 
 module.exports = { products, people };
