@@ -1,21 +1,28 @@
-// JSON
-// JSON is a syntax for storing and exchanging data.
-// JSON is text, written with JavaScript object notation.
-
+// MIDDLEWARES
 const express = require("express");
 const app = express();
-// importing data from data.js
-const { products, people } = require("./content/data");
 
-// res.json method sends a JSON response.
-app.get("/", (req, res) => {
-  res.json(people);
+// we should put the middleware function before the route handler
+const logger = (req, res, next) => {
+  const method = req.method;
+  const url = req.url;
+  const time = new Date().getFullYear();
+  console.log(method, url, time); // => GET / 2021
+  // we need to call next() to move to the next middleware function
+  // if we dont call next() the request will be stuck in this middleware function
+  next();
+};
+
+// middleware is a function that has access to the request and response objects and the next middleware function in the application's request-response cycle.
+// second parameter is the middleware function
+app.get("/", logger, (req, res) => {
+  res.send("Home");
 });
 
-app.get("/products", (req, res) => {
-  res.json(products);
+app.get("/about", logger, (req, res) => {
+  res.send("About");
 });
 
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
+app.listen(5000, () => {
+  console.log("Server is listening on port 5000...");
 });
